@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binaplus Enterprises & N'Royal Enterprises - Quality Manufacturing Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #24110c;
+            --color-accent: #c54918;
+            --color-bg: #F5EFE6;
+            --color-text: #2C1810;
+            --color-surface: #3b2116;
+            --color-secondary-accent: #867a74;
+            --font-display: 'Barlow Condensed', sans-serif;
+            --font-body: 'Lato', sans-serif;
+            --border-radius: 2px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(245, 239, 230, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 4px 4px 0 rgba(36, 17, 12, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -4px 4px 0 rgba(36, 17, 12, 0.2);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--color-accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 var(--color-primary);
+            border: 2px solid var(--color-accent);
+        }
+
+        .cta-button:hover {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--color-accent);
+        }
+
+        /* About Section */
+        #about {
+            background: #fff;
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .split-layout img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 6px 6px 0 var(--color-surface);
+        }
+
+        .split-layout .content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--color-bg);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            box-shadow: 4px 4px 0 var(--color-surface);
+            border: 2px solid var(--color-secondary-accent);
+        }
+
+        .service-card h3 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us Section */
+        #why-choose-us {
+            background: #fff;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            background: var(--color-bg);
+            padding: 2rem;
+            border-left: 4px solid var(--color-accent);
+            box-shadow: 4px 4px 0 rgba(59, 33, 22, 0.1);
+        }
+
+        .why-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .why-card p {
+            line-height: 1.7;
+            color: var(--color-text);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--color-surface);
+            color: #fff;
+        }
+
+        #contact h2 {
+            color: #fff;
+        }
+
+        #contact h2::after {
+            background: var(--color-accent);
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .contact-layout img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 6px 6px 0 rgba(197, 73, 24, 0.3);
+        }
+
+        .contact-info {
+            line-height: 1.8;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details {
+            background: rgba(245, 239, 230, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .contact-details h3 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-details a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-details a:hover {
+            color: var(--color-accent);
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            background: #20BA5A;
+        }
+
+        .floating-whatsapp::before {
+            content: '💬';
+            font-size: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-primary);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .split-layout,
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            section {
+                padding: 48px 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .split-layout img,
+            .contact-layout img {
+                height: 350px;
+            }
+
+            .floating-whatsapp {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-whatsapp::before {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">BINAPLUS & N'ROYAL</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <img src="https://images.pexels.com/photos/7178310/pexels-photo-7178310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Manufacturing Facility" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Binaplus Enterprises & N'Royal Enterprises</h1>
+            <p>Binaplus Enterprises & N'Royal Enterprises: Your Trusted Manufacturing Partners in Ese Odo. Delivering precision, quality, and reliability in every product we manufacture. Proudly serving businesses across Nigeria with world-class manufacturing solutions.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="split-layout">
+                <img src="https://images.pexels.com/photos/37198885/pexels-photo-37198885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Our Team">
+                <div class="content">
+                    <p>Binaplus Enterprises and N'Royal Enterprises are leading manufacturing companies based in Ese Odo Local Government, Ondo State. With our strategic location at No 36 Broad Street, Sabomi, we have established ourselves as reliable partners for businesses seeking quality manufactured products. Our state-of-the-art facilities combine modern manufacturing techniques with experienced craftsmanship to deliver products that meet international standards. We are committed to supporting Nigeria's industrial growth by providing locally manufactured solutions that compete globally while creating employment opportunities in our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="services-header">
+                <h2>Our Manufacturing Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Manufacturing</h3>
+                    <p>Bespoke production services designed to your exact specifications and requirements</p>
+                </div>
+                <div class="service-card">
+                    <h3>Quality Control</h3>
+                    <p>Rigorous testing and inspection processes ensuring every product meets the highest standards</p>
+                </div>
+                <div class="service-card">
+                    <h3>Product Development</h3>
+                    <p>Collaborative design and prototyping services to bring your ideas to market</p>
+                </div>
+                <div class="service-card">
+                    <h3>Bulk Production</h3>
+                    <p>Efficient large-scale manufacturing with consistent quality across all units</p>
+                </div>
+                <div class="service-card">
+                    <h3>Supply Chain Management</h3>
+                    <p>Integrated logistics and inventory solutions for seamless delivery</p>
+                </div>
+                <div class="service-card">
+                    <h3>Technical Consultation</h3>
+                    <p>Expert guidance on materials, processes, and manufacturing optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <p style="font-size: 1.2rem; margin-top: 1rem; font-weight: 500;">Local Expertise, Global Standards</p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Strategic Location</h3>
+                    <p>Based in Ese Odo, we serve clients across Nigeria with efficient logistics and timely delivery</p>
+                </div>
+                <div class="why-card">
+                    <h3>Quality Assurance</h3>
+                    <p>Every product undergoes stringent quality checks to ensure reliability and durability</p>
+                </div>
+                <div class="why-card">
+                    <h3>Competitive Pricing</h3>
+                    <p>Locally manufactured solutions that offer exceptional value without compromising quality</p>
+                </div>
+                <div class="why-card">
+                    <h3>Experienced Team</h3>
+                    <p>Skilled technicians and engineers with years of manufacturing expertise</p>
+                </div>
+                <div class="why-card">
+                    <h3>Modern Facilities</h3>
+                    <p>Equipped with advanced machinery and technology for precision manufacturing</p>
+                </div>
+                <div class="why-card">
+                    <h3>Customer-Focused</h3>
+                    <p>We work closely with clients from concept to delivery, ensuring complete satisfaction</p>
+                </div>
+                <div class="why-card">
+                    <h3>Sustainable Practices</h3>
+                    <p>Committed to environmentally responsible manufacturing processes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <p>Ready to discuss your manufacturing needs? Contact Binaplus Enterprises and N'Royal Enterprises today.</p>
+                    <p>Visit us at our facility in Sabomi, Ese Odo Local Government, or reach out via phone or WhatsApp. Our team is ready to provide you with detailed information about our manufacturing capabilities, pricing, and how we can support your business growth.</p>
+                    
+                    <div class="contact-details">
+                        <h3>Contact Information</h3>
+                        <p><strong>Address:</strong><br>
+                        No 36 Broad Street, Sabomi<br>
+                        Ese Odo Local Government<br>
+                        Ondo State, Nigeria</p>
+                        
+                        <p><strong>Phone:</strong><br>
+                        <a href="tel:+2348106905567">0810 690 5567</a></p>
+                        
+                        <p><strong>Business Hours:</strong><br>
+                        Monday - Friday: 8:00 AM - 5:00 PM<br>
+                        Saturday: 9:00 AM - 2:00 PM</p>
+                        
+                        <a href="https://wa.me/2348106905567" class="whatsapp-btn">WhatsApp Us</a>
+                    </div>
+                </div>
+                <img src="https://images.pexels.com/photos/19893586/pexels-photo-19893586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Contact Us">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Binaplus Enterprises & N'Royal Enterprises. All rights reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/2348106905567" class="floating-whatsapp" aria-label="Chat on WhatsApp"></a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
