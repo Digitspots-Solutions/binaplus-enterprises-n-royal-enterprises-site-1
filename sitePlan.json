@@ -1,0 +1,49 @@
+{
+  "businessName": "Binaplus Enterprises & N'Royal Enterprises",
+  "industry": "Manufacturing",
+  "tone": "professional-confident",
+  "tagline": "Quality Manufacturing Solutions for Industrial Excellence",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Binaplus Enterprises & N'Royal Enterprises: Your Trusted Manufacturing Partners in Ese Odo. Delivering precision, quality, and reliability in every product we manufacture. Proudly serving businesses across Nigeria with world-class manufacturing solutions.",
+      "imagePrompt": "Modern industrial manufacturing facility in Nigeria with clean production lines, skilled workers in safety gear operating machinery, bright natural lighting through large windows, stacks of quality manufactured products, professional atmosphere showing precision and efficiency, photorealistic, high quality",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Binaplus Enterprises and N'Royal Enterprises are leading manufacturing companies based in Ese Odo Local Government, Ondo State. With our strategic location at No 36 Broad Street, Sabomi, we have established ourselves as reliable partners for businesses seeking quality manufactured products. Our state-of-the-art facilities combine modern manufacturing techniques with experienced craftsmanship to deliver products that meet international standards. We are committed to supporting Nigeria's industrial growth by providing locally manufactured solutions that compete globally while creating employment opportunities in our community.",
+      "imagePrompt": "Professional Nigerian manufacturing team in a well-organized factory floor, diverse group of engineers and technicians reviewing blueprints and quality checking products, modern equipment in background, Nigerian flag visible, warm professional lighting, sense of pride and expertise, photorealistic",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Manufacturing Services",
+      "copy": "At Binaplus Enterprises and N'Royal Enterprises, we offer comprehensive manufacturing solutions tailored to meet diverse industrial needs:\n\n• Custom Manufacturing: Bespoke production services designed to your exact specifications and requirements\n• Quality Control: Rigorous testing and inspection processes ensuring every product meets the highest standards\n• Product Development: Collaborative design and prototyping services to bring your ideas to market\n• Bulk Production: Efficient large-scale manufacturing with consistent quality across all units\n• Supply Chain Management: Integrated logistics and inventory solutions for seamless delivery\n• Technical Consultation: Expert guidance on materials, processes, and manufacturing optimization\n\nOur commitment to excellence ensures your manufacturing needs are met with precision, on time, and within budget.",
+      "imagePrompt": "Clean, organized Nigerian manufacturing workspace showcasing various production stages, quality control stations with inspectors checking products, raw materials on one side and finished products on the other, modern industrial equipment, proper safety measures visible, bright professional environment, photorealistic detail",
+      "layout": "grid"
+    },
+    {
+      "id": "why-choose-us",
+      "name": "Why Choose Us",
+      "copy": "Local Expertise, Global Standards\n\n• Strategic Location: Based in Ese Odo, we serve clients across Nigeria with efficient logistics and timely delivery\n• Quality Assurance: Every product undergoes stringent quality checks to ensure reliability and durability\n• Competitive Pricing: Locally manufactured solutions that offer exceptional value without compromising quality\n• Experienced Team: Skilled technicians and engineers with years of manufacturing expertise\n• Modern Facilities: Equipped with advanced machinery and technology for precision manufacturing\n• Customer-Focused: We work closely with clients from concept to delivery, ensuring complete satisfaction\n• Sustainable Practices: Committed to environmentally responsible manufacturing processes\n\nWhen you partner with Binaplus Enterprises and N'Royal Enterprises, you choose manufacturing excellence backed by integrity and innovation.",
+      "imagePrompt": "Split image showing on left: satisfied Nigerian business clients shaking hands with manufacturing representatives in front of quality products, and on right: close-up of precision manufactured parts being inspected under good lighting, certificates of quality visible, professional Nigerian industrial setting, confidence and trust conveyed, photorealistic",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Get In Touch",
+      "copy": "Ready to discuss your manufacturing needs? Contact Binaplus Enterprises and N'Royal Enterprises today.\n\nVisit us at our facility in Sabomi, Ese Odo Local Government, or reach out via phone or WhatsApp. Our team is ready to provide you with detailed information about our manufacturing capabilities, pricing, and how we can support your business growth.\n\nNo 36 Broad Street, Sabomi\nEse Odo Local Government\nOndo State, Nigeria\n\nPhone: 0810 690 5567\nWhatsApp: Available for instant consultation\n\nBusiness Hours:\nMonday - Friday: 8:00 AM - 5:00 PM\nSaturday: 9:00 AM - 2:00 PM\n\nWe look forward to serving you with quality manufacturing solutions that drive your business forward.",
+      "imagePrompt": "Professional Nigerian business reception area or office space with manufacturing company branding, friendly receptionist at modern desk, industrial products displayed tastefully, map of Nigeria showing Ese Odo location, contact information visible on signage, welcoming and accessible atmosphere, natural lighting, photorealistic quality",
+      "layout": "split"
+    }
+  ],
+  "contact": {
+    "phone": "08106905567",
+    "email": "",
+    "address": "No 36 Broad Street, Sabomi, Ese Odo Local Government, Ondo State, Nigeria",
+    "whatsapp": "https://wa.me/2348106905567"
+  }
+}
